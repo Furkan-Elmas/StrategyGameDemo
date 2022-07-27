@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1de678884f7ff0d418fc53408e323694, type: 3}
-  m_Name: Infantry Barrack
+  m_Script: {fileID: 11500000, guid: aad8bf5a72f24a44a84b156f96ad73f0, type: 3}
+  m_Name: Archer
   m_EditorClassIdentifier: 
-  _cellHeight: 4
-  _cellWidth: 4
-  _infantryBarrackPrefab: {fileID: 0}
-  _name: Infantry Barrack
-  _cost: 50
+  _unitType: 1
+  _unitPrefab: {fileID: 0}
+  _name: Archer
+  _speed: 3
+  _cost: 70
+  _cellHeight: 1
+  _cellWidth: 1
