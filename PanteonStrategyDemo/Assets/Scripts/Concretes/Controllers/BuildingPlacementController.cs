@@ -2,12 +2,14 @@ using UnityEngine;
 using System.Collections;
 using PanteonStrategyDemo.Abstracts.ScriptableObjects;
 using PanteonStrategyDemo.Abstracts.InputSystem;
+using PanteonStrategyDemo.Concretes.GameBoardData;
 
 namespace PanteonStrategyDemo.Concretes.Controllers
 {
     public class BuildingPlacementController : MonoBehaviour
     {
         InputData _inputData;
+        PlacementContidions _placementConditions;
 
         GameObject _currentBuildingPrefab;
         GameObject _selectedBuildingPrefab;
@@ -19,6 +21,7 @@ namespace PanteonStrategyDemo.Concretes.Controllers
         void Awake()
         {
             _inputData = new InputData();
+            _placementConditions = new PlacementContidions();
         }
 
         public void SelectBuilding(ProductionDataSO buildingDataSO)
@@ -39,20 +42,26 @@ namespace PanteonStrategyDemo.Concretes.Controllers
         {
             while (true)
             {
-                if (_inputData.LeftClickCheck)
-                {
-                    _currentBuildingPrefab = null;
-                    break;
-                }
-
                 Vector2 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(_inputData.MousePosition);
 
                 _currentBuildingPrefab.transform.position = new Vector2(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y));
 
+                bool isPlaceAvailable = _placementConditions.IsPlaceAvailable(_currentBuildingPrefab.transform.position.x, _currentBuildingPrefab.transform.position.y, _cellHeight, _cellWidth);
+
+                _currentBuildingPrefab.GetComponent<SpriteRenderer>().color = isPlaceAvailable ? Color.white : Color.red;
+
+                if (_inputData.LeftClickCheck)
+                {
+                    if (isPlaceAvailable)
+                    {
+                        _placementConditions.UpdateTiles(_currentBuildingPrefab.transform.position.x, _currentBuildingPrefab.transform.position.y, _cellHeight, _cellWidth);
+                        _currentBuildingPrefab = null;
+                        break;
+                    }
+                }
+
                 yield return new WaitForEndOfFrame();
-
             }
-
         }
     }
 }
