@@ -29,12 +29,12 @@ namespace PanteonStrategyDemo.Concretes.Managers
             InitializeOnGameBegin();
         }
 
-        void InitializeOnGameBegin()
+        public void InitializeOnGameBegin()
         {
             OnGameBeginning?.Invoke();
         }
 
-        void InitializeOnBuildingPlacement()
+        public void InitializeOnBuildingPlacement()
         {
             OnBuildingPlacement?.Invoke();
         }

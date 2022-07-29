@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 897fa41f104342f4f982ba6f7566cae6, type: 2}
   _buildingType: 0
   _barrackPrefab: {fileID: 9161271148947461882, guid: 8431b8cf99c1c0b43b7e7c7378332266, type: 3}
-  _name: CavalryBarrack
+  _name: Cavalry Barrack
   _cost: 80
   _cellHeight: 4
   _cellWidth: 4

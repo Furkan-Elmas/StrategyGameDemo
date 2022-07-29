@@ -8,8 +8,8 @@ namespace PanteonStrategyDemo.Concretes.Managers
         [SerializeField] GameObject _tilePrefab;
         [SerializeField] GameObject _tileContainer;
 
-        [SerializeField] int _gridHeight = 40;
-        [SerializeField] int _gridWidth = 40;
+        [SerializeField] int _gridHeight = 100;
+        [SerializeField] int _gridWidth = 100;
 
         public BoardTileData[,] BoardTiles;
 

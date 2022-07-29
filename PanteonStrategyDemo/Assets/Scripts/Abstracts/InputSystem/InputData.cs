@@ -5,21 +5,22 @@ namespace PanteonStrategyDemo.Abstracts.InputSystem
 {
     public class InputData
     {
-        DefaultAction _inputAction;
+        DefaultAction _inputActions;
 
         public Vector2 MousePosition { get; private set; }
         public bool LeftClickCheck { get; private set; }
         public bool RightClickCheck { get; private set; }
 
+
         public InputData()
         {
-            _inputAction = new DefaultAction();
+            _inputActions = new DefaultAction();
 
-            _inputAction.Player.MousePosition.performed += GetMousePositionOnPerformed;
-            _inputAction.Player.LeftClick.performed += LeftClickCheckOnPerformed;
-            _inputAction.Player.RightClick.performed += RightClickCheckOnPerformed;
+            _inputActions.Player.MousePosition.performed += GetMousePositionOnPerformed;
+            _inputActions.Player.LeftClick.performed += LeftClickCheckOnPerformed;
+            _inputActions.Player.RightClick.performed += RightClickCheckOnPerformed;
 
-            _inputAction.Enable();
+            _inputActions.Enable();
         }
 
         private void RightClickCheckOnPerformed(InputAction.CallbackContext obj)
