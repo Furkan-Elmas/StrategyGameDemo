@@ -7,7 +7,7 @@ namespace PanteonStrategyDemo.Abstracts.ScriptableObjects
     [CreateAssetMenu(fileName = "Barrack", menuName = "ProductionSO/Barrack")]
     public class BarrackDataSO : ProductionDataSO
     {
-        [SerializeField] List<UnitDataSO> _unitDataList;
+        [SerializeField] UnitDataSO _unitData;
         [SerializeField] BuildingType _buildingType;
         [SerializeField] GameObject _barrackPrefab;
         [SerializeField] string _name;
@@ -15,7 +15,7 @@ namespace PanteonStrategyDemo.Abstracts.ScriptableObjects
         [SerializeField] int _cellHeight = 4;
         [SerializeField] int _cellWidth = 4;
 
-        public List<UnitDataSO> UnitDataList { get => _unitDataList; set => _unitDataList = value; }
+        public UnitDataSO UnitData { get => _unitData; set => _unitData = value; }
         public BuildingType BuildType { get => _buildingType; set => _buildingType = value; }
         public override GameObject ProductionPrefab { get => _barrackPrefab; set => _barrackPrefab = value; }
         public override string Name { get => _name; set => _name = value; }

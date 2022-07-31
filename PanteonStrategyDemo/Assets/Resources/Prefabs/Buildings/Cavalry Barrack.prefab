@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3487513167724517991}
   - component: {fileID: 8218392900662770673}
-  - component: {fileID: 2415410107298096903}
   - component: {fileID: 2664635283927327324}
   m_Layer: 0
   m_Name: Cavalry Barrack
@@ -84,18 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2415410107298096903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9161271148947461882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07eef0536fa787e40ac810f23be45e3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2664635283927327324
 BoxCollider2D:
   m_ObjectHideFlags: 0

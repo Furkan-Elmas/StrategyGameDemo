@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bea031df07587449038b2c4480f702, type: 3}
   m_Name: Bank
   m_EditorClassIdentifier: 
-  _buildingType: 0
+  _buildingType: 5
   _powerPlantPrefab: {fileID: 3519242596097157625, guid: 181027bca55f9cd48b25306ea00152ca, type: 3}
   _name: Bank
   _goldGenerationRate: 0

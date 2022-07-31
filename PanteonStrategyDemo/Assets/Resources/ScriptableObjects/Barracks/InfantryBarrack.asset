@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895b83a773061ed47a02599c92326509, type: 3}
   m_Name: InfantryBarrack
   m_EditorClassIdentifier: 
-  _unitDataList:
-  - {fileID: 11400000, guid: bab31a928cfd8d2449bf2e8e699dd77c, type: 2}
+  _unitData: {fileID: 11400000, guid: bab31a928cfd8d2449bf2e8e699dd77c, type: 2}
   _buildingType: 0
   _barrackPrefab: {fileID: 4338868438606512871, guid: ecdfc000e0406104183eb710dd5300a0, type: 3}
   _name: Infantry Barrack

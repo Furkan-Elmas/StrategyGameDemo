@@ -11,7 +11,7 @@ namespace PanteonStrategyDemo.Abstracts.InputSystem
         public bool LeftClickCheck { get; private set; }
         public bool RightClickCheck { get; private set; }
 
-
+        
         public InputData()
         {
             _inputActions = new DefaultAction();

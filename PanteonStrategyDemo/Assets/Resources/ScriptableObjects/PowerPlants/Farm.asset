@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bea031df07587449038b2c4480f702, type: 3}
   m_Name: Farm
   m_EditorClassIdentifier: 
-  _buildingType: 0
+  _buildingType: 3
   _powerPlantPrefab: {fileID: 4951656212564461637, guid: c2bb993e0f8500444ae16249e6896afa, type: 3}
   _name: Farm
   _goldGenerationRate: 0

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895b83a773061ed47a02599c92326509, type: 3}
   m_Name: ArcheryBarrack
   m_EditorClassIdentifier: 
-  _unitDataList:
-  - {fileID: 11400000, guid: ba36ede959b15dd44a6041c82726ff81, type: 2}
-  _buildingType: 0
+  _unitData: {fileID: 11400000, guid: ba36ede959b15dd44a6041c82726ff81, type: 2}
+  _buildingType: 1
   _barrackPrefab: {fileID: 7169834077537274396, guid: 9b16b67cde3bb8f40b722ae66d1d764f, type: 3}
   _name: Archery Barrack
   _cost: 100

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9207199283395569400}
   - component: {fileID: 2856945639108520030}
-  - component: {fileID: 4027049654874302288}
   - component: {fileID: -957835370276891037}
   m_Layer: 0
   m_Name: Market
@@ -84,18 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4027049654874302288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219380857798983075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07eef0536fa787e40ac810f23be45e3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &-957835370276891037
 BoxCollider2D:
   m_ObjectHideFlags: 0

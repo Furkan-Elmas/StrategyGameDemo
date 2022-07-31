@@ -1,5 +1,5 @@
 using UnityEngine;
-using PanteonStrategyDemo.Concretes.GameBoardData;
+using PanteonStrategyDemo.Concretes.GameData;
 
 namespace PanteonStrategyDemo.Concretes.Managers
 {
@@ -17,6 +17,7 @@ namespace PanteonStrategyDemo.Concretes.Managers
 
         public int GridHeight => _gridHeight;
         public int GridWidth => _gridWidth;
+
 
         void Awake()
         {
@@ -45,7 +46,7 @@ namespace PanteonStrategyDemo.Concretes.Managers
             {
                 for (int j = 0; j < GridWidth; j++)
                 {
-                    BoardTiles[i, j] = new BoardTileData { XPosition = j, YPosition = i, IsValid = true };
+                    BoardTiles[i, j] = new BoardTileData { XPosition = j, YPosition = i, IsAvailable = true };
                 }
             }
         }
