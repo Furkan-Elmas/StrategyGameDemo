@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad8bf5a72f24a44a84b156f96ad73f0, type: 3}
+  m_Name: Cavalier
+  m_EditorClassIdentifier: 
+  _unitType: 2
+  _unitPrefab: {fileID: 2771203377766688212, guid: b9c30da66f6abdf45a88e95689d12c40, type: 3}
+  _name: Cavalier
+  _speed: 5
+  _cost: 50
+  _cellHeight: 1
+  _cellWidth: 1
