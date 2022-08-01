@@ -5,7 +5,7 @@ using PanteonStrategyDemo.Concretes.BuildingPlacement;
 using PanteonStrategyDemo.Concretes.Managers;
 using TMPro;
 
-namespace PanteonStrategyDemo.Concretes.UI.ProductView
+namespace PanteonStrategyDemo.Concretes.UI.ProductionView
 {
     public class ProductMenuGenerator : MonoBehaviour
     {

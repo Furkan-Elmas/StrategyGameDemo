@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace PanteonStrategyDemo.Concretes.UI.ProductView
+namespace PanteonStrategyDemo.Concretes.UI.ProductionView
 {
     public class InfiniteScrollController : MonoBehaviour, IBeginDragHandler, IDragHandler, IScrollHandler
     {

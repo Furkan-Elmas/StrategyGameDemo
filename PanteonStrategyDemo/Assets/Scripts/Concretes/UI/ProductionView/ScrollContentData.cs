@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PanteonStrategyDemo.Concretes.UI.ProductView
+namespace PanteonStrategyDemo.Concretes.UI.ProductionView
 {
     public class ScrollContentData
     {
