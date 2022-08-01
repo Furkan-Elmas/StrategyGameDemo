@@ -1,5 +1,5 @@
 using UnityEngine;
-using PanteonStrategyDemo.Abstracts.ProductionTypes;
+using PanteonStrategyDemo.Abstracts.Enums;
 using PanteonStrategyDemo.Abstracts.ScriptableObjects;
 
 namespace PanteonStrategyDemo.Concretes.GameData
@@ -8,6 +8,5 @@ namespace PanteonStrategyDemo.Concretes.GameData
     {
         public ProductionDataSO UnitDataSO { get; set; }
         public UnitType UnitType { get; set; }
-        public bool IsUnitPlaced { get; set; }
     }
 }

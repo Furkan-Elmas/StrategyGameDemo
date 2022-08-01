@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using PanteonStrategyDemo.Abstracts.ProductionTypes;
+using PanteonStrategyDemo.Abstracts.Enums;
 
 namespace PanteonStrategyDemo.Abstracts.ScriptableObjects
 {

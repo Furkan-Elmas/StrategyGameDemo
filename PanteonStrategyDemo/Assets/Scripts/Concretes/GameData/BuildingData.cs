@@ -1,5 +1,5 @@
 using UnityEngine;
-using PanteonStrategyDemo.Abstracts.ProductionTypes;
+using PanteonStrategyDemo.Abstracts.Enums;
 using PanteonStrategyDemo.Abstracts.ScriptableObjects;
 
 namespace PanteonStrategyDemo.Concretes.GameData

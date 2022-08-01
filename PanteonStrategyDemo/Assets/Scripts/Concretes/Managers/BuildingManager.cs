@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PanteonStrategyDemo.Abstracts.ScriptableObjects;
+using PanteonStrategyDemo.Concretes.GameData;
 
 namespace PanteonStrategyDemo.Concretes.Managers
 {
@@ -8,9 +9,11 @@ namespace PanteonStrategyDemo.Concretes.Managers
     {
         List<GameObject> _buildingListOnGameBoard = new List<GameObject>();
         List<ProductionDataSO> _buildings = new List<ProductionDataSO>();
+        BuildingData _selectedBuildingData;
 
         public List<GameObject> BuildingListOnGameBoard { get => _buildingListOnGameBoard; set => _buildingListOnGameBoard = value; }
         public List<ProductionDataSO> Buildings { get => _buildings; set => _buildings = value; }
+        public BuildingData SelectedBuildingData { get => _selectedBuildingData; set => _selectedBuildingData = value; }
 
         public static BuildingManager Instance { get; set; }
 

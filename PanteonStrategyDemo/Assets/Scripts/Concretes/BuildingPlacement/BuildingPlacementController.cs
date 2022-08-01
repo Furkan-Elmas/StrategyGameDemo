@@ -35,8 +35,6 @@ namespace PanteonStrategyDemo.Concretes.BuildingPlacement
             _selectedBuildingPrefab = buildingDataSO.ProductionPrefab;
             _currentBuildingPrefab = Instantiate(_selectedBuildingPrefab, Vector3.zero, Quaternion.identity);
 
-
-
             _cellHeight = buildingDataSO.CellHeight;
             _cellWidth = buildingDataSO.CellWidth;
 
@@ -67,11 +65,12 @@ namespace PanteonStrategyDemo.Concretes.BuildingPlacement
                     {
                         _placementConditionData.UpdateTiles(_currentBuildingPrefab.transform.position.x - (float)buildingDataSO.CellWidth / 2 + 1, _currentBuildingPrefab.transform.position.y - (float)buildingDataSO.CellHeight / 2, _cellWidth, _cellHeight);
                         _buildingData = _currentBuildingPrefab.AddComponent<BuildingData>();
-                        _buildingData.BuildingDataSO = buildingDataSO;
                         _buildingData.IsBuildingPlaced = true;
+                        _currentBuildingPrefab.AddComponent<BoxCollider2D>();
+                        _buildingData.BuildingDataSO = buildingDataSO;
                         BuildingManager.Instance.BuildingListOnGameBoard.Add(_currentBuildingPrefab);
-
                         _currentBuildingPrefab = null;
+
                         break;
                     }
                 }

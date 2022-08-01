@@ -6,7 +6,7 @@ namespace PanteonStrategyDemo.Concretes.GameData
     {
         public void UpdateTiles(float xPosition, float yPosition, int cellWidth, int cellHeight)
         {
-            GetTileOverCursor(xPosition, yPosition, out int row, out int column);
+            GetTileOverProduct(xPosition, yPosition, out int row, out int column);
 
             for (int i = 0; i < cellHeight; i++)
             {
@@ -19,7 +19,7 @@ namespace PanteonStrategyDemo.Concretes.GameData
 
         public bool IsPlaceAvailable(float xPosition, float yPosition, int cellWidth, int cellHeight)
         {
-            GetTileOverCursor(xPosition, yPosition, out int row, out int column);
+            GetTileOverProduct(xPosition, yPosition, out int row, out int column);
 
             for (int i = 0; i < cellHeight; i++)
             {
@@ -35,7 +35,7 @@ namespace PanteonStrategyDemo.Concretes.GameData
             return true;
         }
 
-        public void GetTileOverCursor(float xPosition, float yPosition, out int row, out int column)
+        public void GetTileOverProduct(float xPosition, float yPosition, out int row, out int column)
         {
             row = BoardManager.Instance.GridHeight;
             column = BoardManager.Instance.GridWidth;

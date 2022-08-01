@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using PanteonStrategyDemo.Abstracts.Enums;
 
 namespace PanteonStrategyDemo.Concretes.Managers
 {
@@ -10,10 +11,12 @@ namespace PanteonStrategyDemo.Concretes.Managers
 
         public static GameManager Instance { get; private set; }
 
+        public GameState GameState { get; set; }
+
 
         void Awake()
         {
-            if(Instance == null)
+            if (Instance == null)
             {
                 Instance = this;
             }
