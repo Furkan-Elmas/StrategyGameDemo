@@ -20,17 +20,20 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
 
         public void GenerateUnit()
         {
+            // Gets unit cell height and cell width from unit generator building scriptable object
             int cellHeight = BuildingManager.Instance.SelectedBuildingData.BuildingDataSO.CellHeight;
             int cellWidth = BuildingManager.Instance.SelectedBuildingData.BuildingDataSO.CellWidth;
 
             _selectedBuildingData = BuildingManager.Instance.SelectedBuildingData;
+            // Gets selected building place's row and column value of BoardTile multiple array
             _placementConditionData.GetTileOverProduct(_selectedBuildingData.transform.position.x - (float)cellWidth / 2, _selectedBuildingData.transform.position.y - (float)cellHeight / 2, out int row, out int column);
 
-
+            // Available tile search iteration
             for (int i = 0; i < cellHeight + 2; i++)
             {
                 for (int j = 0; j < cellWidth + 2; j++)
                 {
+                    // Creates unit and makes tile state false if place is available
                     if (BoardManager.Instance.BoardTiles[i + row - 1, j + column].IsAvailable)
                     {
                         BarrackDataSO barrackData = (BarrackDataSO)_selectedBuildingData.BuildingDataSO;

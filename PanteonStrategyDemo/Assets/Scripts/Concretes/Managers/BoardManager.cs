@@ -38,6 +38,7 @@ namespace PanteonStrategyDemo.Concretes.Managers
             GameManager.Instance.OnGameBeginning += GenerateGameTiles;
         }
 
+        // Creating game board grid
         void GenerateBoard()
         {
             BoardTiles = new BoardTileData[GridHeight, GridWidth];
@@ -50,7 +51,8 @@ namespace PanteonStrategyDemo.Concretes.Managers
                 }
             }
         }
-
+        
+        // Creating grid tile instances
         void GenerateGameTiles()
         {
             for (int i = 0; i < GridHeight; i++)
