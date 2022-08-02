@@ -4,6 +4,7 @@ using PanteonStrategyDemo.Abstracts.ScriptableObjects;
 using PanteonStrategyDemo.Abstracts.InputSystem;
 using PanteonStrategyDemo.Concretes.Managers;
 using PanteonStrategyDemo.Concretes.GameData;
+using PanteonStrategyDemo.Concretes.Factory;
 
 namespace PanteonStrategyDemo.Concretes.BuildingPlacement
 {
@@ -43,6 +44,9 @@ namespace PanteonStrategyDemo.Concretes.BuildingPlacement
 
         IEnumerator PlaceBuilding(ProductionDataSO buildingDataSO)
         {
+            BuildingFactory unitFactory = new BuildingFactory(_selectedBuildingPrefab, buildingDataSO, out BuildingData buildingData);
+            _currentBuildingPrefab = unitFactory.GetBuilding();
+
             while (true)
             {
                 Vector2 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(_inputData.MousePosition);
@@ -64,10 +68,7 @@ namespace PanteonStrategyDemo.Concretes.BuildingPlacement
                     if (isPlaceAvailable)
                     {
                         _placementConditionData.UpdateTiles(_currentBuildingPrefab.transform.position.x - (float)buildingDataSO.CellWidth / 2 + 1, _currentBuildingPrefab.transform.position.y - (float)buildingDataSO.CellHeight / 2, _cellWidth, _cellHeight);
-                        _buildingData = _currentBuildingPrefab.AddComponent<BuildingData>();
-                        _buildingData.IsBuildingPlaced = true;
-                        _currentBuildingPrefab.AddComponent<BoxCollider2D>();
-                        _buildingData.BuildingDataSO = buildingDataSO;
+                        buildingData.IsBuildingPlaced = true;
                         BuildingManager.Instance.BuildingListOnGameBoard.Add(_currentBuildingPrefab);
                         _currentBuildingPrefab = null;
 

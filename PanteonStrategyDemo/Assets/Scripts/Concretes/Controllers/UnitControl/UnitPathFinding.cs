@@ -14,7 +14,7 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
         UnitDataSO _unitDataSO;
         InputData _inputData;
 
-        Vector2 _currentPosition;
+        Vector2 _currentPosition, _lastPosition;
         int _unitCellHeight;
         int _unitCellWidth;
 
@@ -55,6 +55,11 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
             _unitCellWidth = _unitDataSO.CellWidth;
 
             Vector2 mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(_inputData.MousePosition);
+            if (!BoardManager.Instance.BoardTiles[(int)mousePosition.y, (int)mousePosition.x].IsAvailable)
+            {
+                _isMoving = false;
+                return;
+            }
             mousePosition = new Vector2(Mathf.Round(mousePosition.x) - 0.5f, Mathf.Round(mousePosition.y) + 0.5f);
 
             StartCoroutine(MoveCoroutine(mousePosition));
@@ -65,10 +70,10 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
             while ((Vector2)transform.position != mousePosition)
             {
                 _placementConditionData.GetTileOverProduct(_currentPosition.x - (float)_unitCellWidth / 2, _currentPosition.y - (float)_unitCellHeight / 2, out int row, out int column);
-                Vector2 nextPosition1 = new Vector2(BoardManager.Instance.BoardTiles[row, column + 2].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row, column].YPosition + 0.5f);
+                Vector2 nextPosition1 = new Vector2(BoardManager.Instance.BoardTiles[row, column + 2].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row, column + 2].YPosition + 0.5f);
                 Vector2 nextPosition2 = new Vector2(BoardManager.Instance.BoardTiles[row, column].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row, column].YPosition + 0.5f);
-                Vector2 nextPosition3 = new Vector2(BoardManager.Instance.BoardTiles[row, column + 1].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row + 1, column].YPosition + 0.5f);
-                Vector2 nextPosition4 = new Vector2(BoardManager.Instance.BoardTiles[row, column + 1].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row - 1, column].YPosition + 0.5f);
+                Vector2 nextPosition3 = new Vector2(BoardManager.Instance.BoardTiles[row + 1, column + 1].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row + 1, column + 1].YPosition + 0.5f);
+                Vector2 nextPosition4 = new Vector2(BoardManager.Instance.BoardTiles[row - 1, column + 1].XPosition - 0.5f, BoardManager.Instance.BoardTiles[row - 1, column + 1].YPosition + 0.5f);
 
                 float distance1 = Vector2.Distance(mousePosition, nextPosition1);
                 float distance2 = Vector2.Distance(mousePosition, nextPosition2);
@@ -84,9 +89,11 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
                         transform.position = Vector2.MoveTowards(transform.position, nextPosition1, Time.deltaTime * _unitDataSO.Speed);
                         yield return new WaitForEndOfFrame();
                     }
+                    _lastPosition = _currentPosition;
                     _currentPosition = nextPosition1;
+                    continue;
                 }
-                else if (minDistance == distance2)
+                if (minDistance == distance2)
                 {
                     while ((Vector2)transform.position != nextPosition2)
                     {
@@ -94,8 +101,9 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
                         yield return new WaitForEndOfFrame();
                     }
                     _currentPosition = nextPosition2;
+                    continue;
                 }
-                else if (minDistance == distance3)
+                if (minDistance == distance3)
                 {
                     while ((Vector2)transform.position != nextPosition3)
                     {
@@ -103,8 +111,9 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
                         yield return new WaitForEndOfFrame();
                     }
                     _currentPosition = nextPosition3;
+                    continue;
                 }
-                else if (minDistance == distance4)
+                if (minDistance == distance4)
                 {
                     while ((Vector2)transform.position != nextPosition4)
                     {
@@ -112,8 +121,8 @@ namespace PanteonStrategyDemo.Concretes.UnitControl
                         yield return new WaitForEndOfFrame();
                     }
                     _currentPosition = nextPosition4;
+                    continue;
                 }
-
                 yield return new WaitForEndOfFrame();
             }
             _isMoving = false;
