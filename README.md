@@ -1,4 +1,4 @@
-# PanteonStrategyDemo Project Developed by Furkan Elmas
+# StrategyGameDemo Project Developed by Furkan Elmas
 ### Made with Unity 2020.3.35f1
 ---
 
